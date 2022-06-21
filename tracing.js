@@ -28,7 +28,7 @@ const sdk = new opentelemetry.NodeSDK({
   // traceExporter: new opentelemetry.tracing.ConsoleSpanExporter(),
   instrumentations: 
     [
-      getNodeAutoInstrumentations(),
+      // getNodeAutoInstrumentations(),
       // new RouterInstrumentation(),
       // new SocketIoInstrumentation(),
       new KafkaJsInstrumentation() 
@@ -37,8 +37,8 @@ const sdk = new opentelemetry.NodeSDK({
 
 const provider = new NodeTracerProvider({
   resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: "simon-microservice",
-        [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: "Production"
+    [SemanticResourceAttributes.SERVICE_NAME]: process.env.SERVICE_NAME,
+    [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: process.env.DEPLOYMENT_ENVIRONMENT
     }),
 });
 
