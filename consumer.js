@@ -15,6 +15,10 @@ const consumeMessages = async () => {
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
         console.log({
+          topic: topic,
+          partition: partition,
+          offset: message.offset,
+          key: message.key,
           value: message.value.toString(),
         })
       },
@@ -31,4 +35,4 @@ consumeMessages()
     process.exit(1);
     });
 
-// "The only sin is to make a choice without knowing you are making one." - Jonathan Shewchuk
+// "The only sin is to make a choice without knowing you are making one." - Jonathan Shewchuk 
