@@ -1,6 +1,7 @@
 "use strict";
 
 const dotenv = require("dotenv");
+const { json } = require("express");
 dotenv.config();
 
 const kafkaInst = require("./kafka");
@@ -8,6 +9,8 @@ const kafkaInst = require("./kafka");
 const consumeMessages = async () => {
     const consumer = kafkaInst.consumer({ groupId: process.env.GROUP_ID })
     await consumer.connect();
+    const data = await consumer.describeGroup()
+    console.log(data);
     await consumer.subscribe({
       topic: process.env.TOPIC,
       fromBeginning: true,
@@ -18,12 +21,13 @@ const consumeMessages = async () => {
           topic: topic,
           partition: partition,
           offset: message.offset,
-          key: message.key,
+          key: message.key.toString(),
+          headers: message.headers,
           value: message.value.toString(),
         })
       },
     });
-   }
+   };
 
 consumeMessages()
     .catch(async (error) => {
