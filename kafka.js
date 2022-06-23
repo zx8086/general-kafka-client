@@ -11,7 +11,6 @@ const kafka = new Kafka({
   sasl,
   connectionTimeout: 10000,
   retry: { retries: 3 },
-  logLevel: "ERROR",
 });
 
 module.exports = kafka;
