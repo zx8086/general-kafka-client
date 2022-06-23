@@ -3,6 +3,9 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
+const errorTypes = ['unhandledRejection', 'uncaughtException']
+const signalTraps = ['SIGTERM', 'SIGINT', 'SIGUSR2']
+
 const kafkaInst = require("./kafka");
 const consumer = kafkaInst.consumer({ groupId: process.env.GROUP_ID })
 
@@ -29,9 +32,6 @@ const consumeMessages = async () => {
    };
 
 consumeMessages().catch(e => console.error(`[ ${process.env.TOPIC}/consumer] ${e.message}`, e))
-
-const errorTypes = ['unhandledRejection', 'uncaughtException']
-const signalTraps = ['SIGTERM', 'SIGINT', 'SIGUSR2']
 
 errorTypes.forEach(type => {
   process.on(type, async e => {
