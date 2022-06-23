@@ -56,13 +56,4 @@ signalTraps.forEach(type => {
   })
 })
 
-  //  .catch(async (error) => {
-  //  console.error(error);
-  //  try {
-  //  } catch (e) {
-  //      console.error("Failed to gracefully disconnect consumer", e);
-  //  }
-  //  process.exit(1);
-  //  });
-
 // "The only sin is to make a choice without knowing you are making one." - Jonathan Shewchuk 
