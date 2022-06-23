@@ -21,7 +21,7 @@ const { ExpressInstrumentation } = require("opentelemetry-instrumentation-expres
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
 
 // const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api');
-// // For troubleshooting, set the log level to DiagLogLevel.DEBUG
+// For troubleshooting, set the log level to DiagLogLevel.DEBUG
 // diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.DEBUG);
 
 const sdk = new opentelemetry.NodeSDK({
