@@ -11,6 +11,7 @@ const kafka = new Kafka({
 })
 
 const topic = 'topic-test'
+
 const producer = kafka.producer()
 
 const getRandomNumber = () => Math.round(Math.random(10) * 1000)
