@@ -45,14 +45,14 @@ const provider = new NodeTracerProvider({
 const exporter = new OTLPTraceExporter();
 
 // --- Metrics Working Target Common
-const metricExporter = new OTLPMetricExporter({});
+// const metricExporter = new OTLPMetricExporter({});
 
-const meterProvider = new MeterProvider({
-  resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: "simon-metrics-service",
-        [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: "Production",
-  }),
-});
+// const meterProvider = new MeterProvider({
+//   resource: new Resource({
+//         [SemanticResourceAttributes.SERVICE_NAME]: "simon-metrics-service",
+//         [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: "Production",
+//   }),
+// });
 
 // Configure span processor to send spans to the exporter
 provider.addSpanProcessor(new SimpleSpanProcessor(new ConsoleSpanExporter()));
