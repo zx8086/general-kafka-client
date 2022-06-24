@@ -28,7 +28,7 @@ const sdk = new opentelemetry.NodeSDK({
   // traceExporter: new opentelemetry.tracing.ConsoleSpanExporter(),
   instrumentations: 
     [
-      // getNodeAutoInstrumentations(),
+      getNodeAutoInstrumentations(),
       // new RouterInstrumentation(),
       // new SocketIoInstrumentation(),
       new KafkaJsInstrumentation() 
