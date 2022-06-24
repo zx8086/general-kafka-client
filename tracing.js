@@ -49,7 +49,7 @@ const exporter = new OTLPTraceExporter();
 
 // const meterProvider = new MeterProvider({
 //   resource: new Resource({
-//         [SemanticResourceAttributes.SERVICE_NAME]: "simon-metrics-service",
+//         [SemanticResourceAttributes.SERVICE_NAME]: "simon-microservice-metrics",
 //         [SemanticResourceAttributes.DEPLOYMENT_ENVIRONMENT]: "Production",
 //   }),
 // });
