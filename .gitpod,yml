@@ -4,4 +4,5 @@
 
 tasks:
   - init: npm install
+    command: echo 'start script'
     command: npm run tracer
