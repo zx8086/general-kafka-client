@@ -3,7 +3,4 @@ tasks:
   - init: echo 'init script' # runs during prebuild
     command: echo 'start script'
     command: npm install
-    command: npm run tracer  
-    
-
-
+    command: npm run tracer
